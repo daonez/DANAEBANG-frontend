@@ -21,8 +21,7 @@ const ComplexDetail = props => {
       .get(`${COMPLEX_DETAIL_URL}&id=${props.match.params.id}`)
       .then(res => setInfo(res.data.complex_detail));
   }, [props.match.params.id]);
-  // <ImageView imgUrl={info.image_urls} />
-  // <ImageView info={info.image_urls} />
+
   // info => 단지 거래 상세 정보
   return (
     <Layout>
@@ -30,8 +29,8 @@ const ComplexDetail = props => {
         <>
           <ComplexHeader info={info} />
           <ComplexTable info={info} />
-          <ImageView info={info.image_urls} />
-          <ImgViewModal info={info.image_urls} />
+          <ImageView imgUrl={info.image_urls} />
+          <ImgViewModal imgUrl={info.image_urls} />
           <Nav />
           <div>
             <ComplexPrice
